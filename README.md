@@ -138,7 +138,7 @@ All scripts are designed to fail explicitly if an issue is detected.
 
 Install dependencies:
   ```bash
-  pip install -r requirements.txt
+  pip install -r requirements.txt```
 
 Optional (for SHAP DeepExplainer support):
 
