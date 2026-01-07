@@ -141,15 +141,15 @@ Install dependencies:
   pip install -r requirements.txt
 
 Optional (for SHAP DeepExplainer support):
-  ```bash
+
   pip install tensorflow
   
 Verify environment:
-  ```bash
+
   python check_setup.py
 
 Launch the application:
-  ```bash
+
   streamlit run app.py
 
 Open your browser at:
