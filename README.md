@@ -181,8 +181,6 @@ Open your browser at:
 
   http://localhost:8501
 
-  ```md
-
 ## Author
 
 Myriam  
