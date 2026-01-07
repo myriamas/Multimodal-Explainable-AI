@@ -137,18 +137,25 @@ All scripts are designed to fail explicitly if an issue is detected.
 ## Quick Start
 
 Install dependencies:
+
   ```bash
-  pip install -r requirements.txt```
+  pip install -r requirements.txt
+
 ```md
 Optional (for SHAP DeepExplainer support):
+
 ```bash
   pip install tensorflow
+
 ```md  
 Verify environment:
+
 ```bash
   python check_setup.py
+
 ```md
 Launch the application:
+
 ```bash
   streamlit run app.py
 
