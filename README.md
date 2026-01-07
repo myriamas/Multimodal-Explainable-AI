@@ -134,6 +134,29 @@ All scripts are designed to fail explicitly if an issue is detected.
 
 ---
 
+## Typical Performance
+
+| Operation | Time |
+|---------|------|
+| Inference | ~0.5 s |
+| Grad-CAM | ~1–2 s |
+| LIME | ~8–15 s |
+| SHAP (DeepExplainer) | ~15–30 s |
+| SHAP (fallback) | ~3–5 s |
+
+---
+
+## Project Status
+
+- Multimodal support (image and audio)
+- Grad-CAM, LIME and SHAP integrated
+- SHAP-safe PyTorch models
+- Robust fallback mechanisms
+- Validation and diagnostics included
+
+Status: Stable · Robust · Production-ready
+
+---
 ## Quick Start
 
 Install dependencies:
@@ -157,32 +180,6 @@ Launch the application:
 Open your browser at:
 
   http://localhost:8501
-
-
-
----
-
-## Typical Performance
-
-| Operation | Time |
-|---------|------|
-| Inference | ~0.5 s |
-| Grad-CAM | ~1–2 s |
-| LIME | ~8–15 s |
-| SHAP (DeepExplainer) | ~15–30 s |
-| SHAP (fallback) | ~3–5 s |
-
----
-
-## Project Status
-
-- Multimodal support (image and audio)
-- Grad-CAM, LIME and SHAP integrated
-- SHAP-safe PyTorch models
-- Robust fallback mechanisms
-- Validation and diagnostics included
-
-Status: Stable · Robust · Production-ready
 
 ---
 
