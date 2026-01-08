@@ -1,1 +1,32 @@
-{"name": "XAI Unified Platform - Documentation Index", "version": "2.0", "date": "2026-01-07", "files": {"quick_access": [{"title": "🚀 Quick Start", "file": "QUICKSTART.md", "time": "5 min", "purpose": "Démarrage immédiat"}, {"title": "📋 Executive Summary", "file": "EXECUTIVE_SUMMARY.md", "time": "10 min", "purpose": "Vue d'ensemble des corrections"}, {"title": "📚 Main README", "file": "README.md", "time": "20 min", "purpose": "Guide utilisateur complet"}, {"title": "🔧 Technical Fixes", "file": "FIXES_DOCUMENTATION.md", "time": "30 min", "purpose": "Détails techniques des fixes"}], "tools": [{"title": "✅ Check Setup", "file": "check_setup.py", "command": "python check_setup.py", "purpose": "Vérifier dépendances et fichiers", "time": "5 sec"}, {"title": "🧪 Validate Fixes", "file": "validate_fixes.py", "command": "python validate_fixes.py", "purpose": "Valider tous les fixes", "time": "60 sec"}, {"title": "🔍 Full Diagnosis", "file": "diagnose.py", "command": "python diagnose.py", "purpose": "Diagnostic complet du système", "time": "120 sec"}, {"title": "📊 Changes Summary", "file": "CHANGES_SUMMARY.py", "command": "python CHANGES_SUMMARY.py", "purpose": "Résumé des modifications", "time": "5 sec"}], "code_structure": {"core": {"path": "core/", "files": ["compatibility.py", "model_factory.py", "shap_safe_engine.py"], "purpose": "Logique centralisée"}, "image_pipeline": {"path": "image_pipeline/", "files": ["model.py", "preprocess.py", "gradcam.py", "lime_image.py", "shap_image.py"], "purpose": "Pipeline images radiographiques"}, "audio_pipeline": {"path": "audio_pipeline/", "files": ["model.py", "preprocess.py", "lime_audio.py", "shap_audio.py"], "purpose": "Pipeline audio spectrogrammes"}, "app": {"path": "app.py", "purpose": "Application Streamlit principale"}}, "getting_started": {"step1": {"title": "Vérifier la configuration", "command": "python check_setup.py", "expected": "Tous les ✓"}, "step2": {"title": "Valider les fixes", "command": "python validate_fixes.py", "expected": "Tous les tests réussis"}, "step3": {"title": "Lancer l'app", "command": "streamlit run app.py", "expected": "http://localhost:8501"}}, "problems_solved": [{"number": 1, "name": "RuntimeError Inplace", "file": "core/model_factory.py", "status": "✓"}, {"number": 2, "name": "Grad-CAM ↔ SHAP Conflicts", "file": "app.py", "status": "✓"}, {"number": 3, "name": "Audio Pipeline", "file": "audio_pipeline/shap_audio.py", "status": "✓"}, {"number": 4, "name": "Missing SHAP Audio", "file": "audio_pipeline/shap_audio.py", "status": "✓"}, {"number": 5, "name": "Global Stability", "file": "core/shap_safe_engine.py", "status": "✓"}], "performance": {"prediction": "~0.5s", "gradcam": "~1-2s", "lime": "~8-15s", "shap": "~15-30s", "comparison_tab": "~30-60s"}, "key_improvements": [{"area": "SHAP Safety", "improvement": "Model Factory + Recursive ReLU Replacement", "file": "core/model_factory.py"}, {"area": "Hook Management", "improvement": "Systematic Cleanup with try-except-finally", "file": "app.py"}, {"area": "Engine Isolation", "improvement": "ShapExplainerEngine for safe SHAP execution", "file": "core/shap_safe_engine.py"}, {"area": "Audio Support", "improvement": "Full SHAP + LIME support for spectrograms", "file": "audio_pipeline/shap_audio.py"}, {"area": "Error Handling", "improvement": "Informative messages with fallbacks", "file": "app.py"}], "new_files_count": 10, "modified_files_count": 3, "production_ready": true, "status": "All Issues Resolved ✓"}
+{
+  "name": "XAI Unified Platform - Documentation Index",
+  "version": "2.1",
+  "date": "2026-01-08",
+  "description": "Documentation minimale - fichiers de validation supprimés",
+  "structure": {
+    "root_files": {
+      "app.py": "Application Streamlit principale (ESSENTIEL)",
+      "PROJECT_OVERVIEW.md": "Vue d'ensemble complète du projet"
+    },
+    "core": {
+      "path": "core/",
+      "files": ["__init__.py", "compatibility.py", "model_factory.py", "shap_safe_engine.py"],
+      "purpose": "Logique centralisée"
+    },
+    "image_pipeline": {
+      "path": "image_pipeline/",
+      "files": ["__init__.py", "model.py", "preprocess.py", "gradcam.py", "lime_image.py", "shap_image.py"],
+      "purpose": "Pipeline images radiographiques"
+    },
+    "audio_pipeline": {
+      "path": "audio_pipeline/",
+      "files": ["__init__.py", "model.py", "preprocess.py", "lime_audio.py", "shap_audio.py"],
+      "purpose": "Pipeline audio spectrogrammes"
+    }
+  },
+  "to_launch": {
+    "command": "streamlit run app.py",
+    "url": "http://localhost:8501"
+  },
+  "status": "Production ready ✓ - All validation scripts removed"
+}
