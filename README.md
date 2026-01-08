@@ -48,7 +48,7 @@ solving several well-known incompatibilities encountered in real-world projects.
 ---
 
 ## Project Structure
-    
+    ```
     unified_xai/
     ├── app.py # Streamlit application (UI & orchestration)
     ├── core/ # Central logic (model safety, SHAP engine)
@@ -59,7 +59,7 @@ solving several well-known incompatibilities encountered in real-world projects.
     ├── diagnose.py # System diagnostics
     ├── requirements.txt
     └── README.md
-
+```
 ---
 
 ## Supported Models
@@ -163,24 +163,24 @@ Install dependencies:
 
   ```
   pip install -r requirements.txt
- 
+ ```
 Optional (for SHAP DeepExplainer support):
- 
+ ```
   pip install tensorflow
-
+```
  
 Verify environment:
- 
+ ```
   python check_setup.py
- 
+ ```
 Launch the application:
- 
+ ```
   streamlit run app.py
- 
+ ```
 Open your browser at:
 
   http://localhost:8501
-```
+
 ## Author
 
 Myriam  
