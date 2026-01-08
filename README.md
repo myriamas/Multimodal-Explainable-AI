@@ -48,7 +48,7 @@ solving several well-known incompatibilities encountered in real-world projects.
 ---
 
 ## Project Structure
-    ```
+
     unified_xai/
     ├── app.py # Streamlit application (UI & orchestration)
     ├── core/ # Central logic (model safety, SHAP engine)
@@ -59,7 +59,7 @@ solving several well-known incompatibilities encountered in real-world projects.
     ├── diagnose.py # System diagnostics
     ├── requirements.txt
     └── README.md
-```
+
 ---
 
 ## Supported Models
