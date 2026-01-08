@@ -161,7 +161,7 @@ Status: Stable · Robust · Production-ready
 
 Install dependencies:
 
-  ```bash
+  ```
   pip install -r requirements.txt
  
 Optional (for SHAP DeepExplainer support):
@@ -180,7 +180,7 @@ Launch the application:
 Open your browser at:
 
   http://localhost:8501
-
+```
 ## Author
 
 Myriam  
