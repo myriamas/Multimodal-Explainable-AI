@@ -33,3 +33,16 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+
+# Models and large artifacts (local only)
+models/
+*.pt
+*.pb
+*.index
+*.data-*
+*.h5
+*.ckpt
+*.onnx
+
+# Local patches / temp
+*.patch
