@@ -59,18 +59,35 @@ def _get_model(input_type, model_name):
     Charge le modèle avec cache.
     Les versions SHAP-safe sont créées à la demande dans shap_image/shap_audio.
     """
+    model_source = None
     if input_type == "image":
         model = load_model(model_name)
+        model_source = model_name
     else:
-        model = load_audio_model(model_name)
-    
+        if model_name == "Keras Model":
+            keras_candidate = os.path.join("models", "audio", "saved_model")
+            keras_candidate2 = os.path.join("models", "audio", "saved_model", "model")
+            keras_path = keras_candidate if os.path.exists(keras_candidate) else keras_candidate2
+            try:
+                import tensorflow as tf
+                try:
+                    model = tf.keras.models.load_model(keras_path)
+                    model_source = keras_path
+                except Exception as ve:
+                    print('Keras load_model failed, falling back to VGG16:', ve)
+                    model = load_audio_model("VGG16")
+                    model_source = "Fallback VGG16 (TF load failed)"
+            except Exception as e:
+                print('TensorFlow import or init error, falling back to PyTorch:', e)
+                model = load_audio_model("VGG16")
+                model_source = "Fallback VGG16 (TF not available)"
+        else:
+            model = load_audio_model(model_name)
+            model_source = model_name
     model.eval()
-    
-    # Désactiver les gradients par défaut
     for param in model.parameters():
         param.requires_grad = False
-    
-    return model
+    return model, model_source
 
 def _predict(model, input_tensor):
     model.eval()
@@ -101,9 +118,9 @@ with st.sidebar:
     if input_type == "image":
         model_name = st.selectbox("Architecture", ["DenseNet121", "AlexNet"])
     else:
-        model_name = st.selectbox("Architecture", ["VGG16", "ResNet18"])
+        model_name = st.selectbox("Architecture", ["VGG16", "ResNet18", "Keras Model"])
     
-    model = _get_model(input_type, model_name)
+    model, model_source = _get_model(input_type, model_name)
     xai_options = get_compatible_xai(input_type)
     xai_method = st.selectbox("XAI Method", xai_options)
 
